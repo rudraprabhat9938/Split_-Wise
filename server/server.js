@@ -1,4 +1,5 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const cors = require('cors');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
@@ -602,7 +603,5 @@ app.post(
   }
 );
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Export the app as a serverless handler for Vercel
+module.exports = serverless(app);
