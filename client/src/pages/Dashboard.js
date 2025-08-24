@@ -4,7 +4,7 @@ import AuthContext from '../context/auth/authContext';
 import GroupContext from '../context/group/groupContext';
 import AlertContext from '../context/alert/alertContext';
 import ExpenseContext from '../context/expense/expenseContext';
-import { formatCurrency } from '../utils/formatCurrency';
+// formatCurrency removed (unused) to satisfy lint rules
 import { generateBalancePDF } from '../utils/pdfExport';
 
 const Dashboard = () => {

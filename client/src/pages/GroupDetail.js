@@ -2,19 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import GroupContext from '../context/group/groupContext';
 import ExpenseContext from '../context/expense/expenseContext';
-import AuthContext from '../context/auth/authContext';
 import { formatCurrency } from '../utils/formatCurrency';
 import { generateExpensePDF } from '../utils/pdfExport';
 
 const GroupDetail = ({ match }) => {
   const groupContext = useContext(GroupContext);
   const expenseContext = useContext(ExpenseContext);
-  const authContext = useContext(AuthContext);
   const history = useHistory();
 
   const { groups, deleteGroup } = groupContext;
   const { expenses, getExpenses, deleteExpense } = expenseContext;
-  const { user } = authContext;
 
   const [currentGroup, setCurrentGroup] = useState(null);
   const [groupStats, setGroupStats] = useState({

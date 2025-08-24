@@ -14,12 +14,14 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #f8f9fa;
   color: #333;
 }
+
+/* Allow user-controlled text scaling and zooming for accessibility */
 
 a {
   color: var(--primary-color);
@@ -97,10 +99,10 @@ ul {
   color: #888;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='number'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
 select,
 textarea {
   display: block;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ExpenseContext from '../context/expense/expenseContext';
 import AuthContext from '../context/auth/authContext';
 import AlertContext from '../context/alert/alertContext';
-import { formatCurrency } from '../utils/formatCurrency';
+// formatCurrency removed (unused) to satisfy lint rules
 import { generateBalancePDF } from '../utils/pdfExport';
 
 const Balances = () => {
