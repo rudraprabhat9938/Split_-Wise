@@ -65,6 +65,15 @@ body {
   background-color: var(--dark-color);
 }
 
+/* Ensure container is fluid on very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /* Navbar Styling */
 .navbar {
   display: flex;
@@ -84,6 +93,48 @@ body {
 .navbar-right {
   display: flex;
   align-items: center;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+/* Mobile open state */
+.nav-list.open {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: inline-block;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 60px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    padding: 0.5rem 1rem;
+    min-width: 150px;
+  }
+  .nav-list li {
+    margin: 0.5rem 0;
+  }
 }
 
 .navbar-brand {

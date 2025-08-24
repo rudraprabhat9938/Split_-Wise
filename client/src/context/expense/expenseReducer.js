@@ -7,7 +7,7 @@ import {
   SETTLE_UP
 } from '../types';
 
-export default (state, action) => {
+export const expenseReducer = (state, action) => {
   switch (action.type) {
     case GET_EXPENSES:
       return {
@@ -48,3 +48,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default expenseReducer;

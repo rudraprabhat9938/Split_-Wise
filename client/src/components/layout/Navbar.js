@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 import ThemeToggle from '../ThemeToggle';
@@ -6,6 +6,7 @@ import ThemeToggle from '../ThemeToggle';
 const Navbar = () => {
   const authContext = useContext(AuthContext);
   const { isAuthenticated, logout, user } = authContext;
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const onLogout = () => {
     logout();
@@ -41,14 +42,24 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <h1>
-        <Link to='/'>
-          <i className='fas fa-money-bill-wave'></i> SplitWise
+      <h1 className="navbar-brand">
+        <Link to='/' aria-label="Home">
+          <i className='fas fa-money-bill-wave' aria-hidden="true"></i> SplitWise
         </Link>
       </h1>
       <div className="navbar-right">
         <ThemeToggle />
-        <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
+        {/* Mobile menu button */}
+        <button
+          className="mobile-menu-btn"
+          aria-label="Toggle navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <i className={menuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
+        </button>
+        <ul className={"nav-list " + (menuOpen ? 'open' : '')}>
+          {isAuthenticated ? authLinks : guestLinks}
+        </ul>
       </div>
     </div>
   );

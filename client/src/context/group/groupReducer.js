@@ -7,7 +7,7 @@ import {
   CLEAR_CURRENT_GROUP
 } from '../types';
 
-export default (state, action) => {
+export const groupReducer = (state, action) => {
   switch (action.type) {
     case GET_GROUPS:
       return {
@@ -47,3 +47,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default groupReducer;
